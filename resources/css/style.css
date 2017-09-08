@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
 
+body {
+    background: #edf0f1;
+}
+
 body, input, button {
     font-family: 'Roboto', sans-serif;
 }
+
 body {
     display: inline-table;  /*changed to inline-table*/
     -webkit-box-sizing: border-box;
@@ -31,8 +36,10 @@ header {
 header input {
     width: 100%;
     height: 50px;
+    box-sizing: border-box;
     float: left;
-    color: #fff;
+    color: #FFFFFF;
+    padding: 0 60px 0 0 ;
     font-size: 15px;
     font-weight: 400;
     text-indent: 18px;
@@ -69,4 +76,37 @@ header input::-moz-placeholder {
 header input:-ms-input-placeholder {
     color: rgba(255, 255, 255, 0.75);
 
+}
+
+header button {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 2;
+    border-radius: 25px;
+    background: #fff;
+    border: 0px;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
+
+header button svg {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -8px 0 0 -8px;
+}
+
+header button svg .fill {
+    fill:#25b99a;
 }
