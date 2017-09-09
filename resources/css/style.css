@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
 
 body {
     background: #edf0f1;
@@ -15,6 +16,10 @@ body {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
      box-sizing: border-box;
+}
+
+.nofill {
+    fill: none;
 }
 
 header {
@@ -93,6 +98,7 @@ header button {
     box-shadow: none;
     outline: none;
     cursor: pointer;
+
     -webkit-appearance: none;
     -moz-appearance: none;
     -ms-appearance: none;
@@ -112,6 +118,7 @@ header button svg {
 header button svg .fill {
     fill:#25b99a;
 }
+
 .container {
     width: 100%;
     float: left;
@@ -127,14 +134,107 @@ ul.todo {
 
 ul.todo li {
     width: 100%;
-    height: 50px;
+    min-height: 50px;
     float: left;
+    position: relative;
+    font-size: 14px;
+    font-weight: 400;
+    color: #444;
+    line-height: 22px;
     background: #fff;
     border-radius: 5px;
     box-shadow: 0px 1px 2px rgba(44, 62, 80, 0.10);
-    margin: 0 0 10px 0;
+    padding: 14px 100px 14px 14px;
 }
 
 ul.todo li:last-of-type {
     margin: 0px;
+}
+
+ul.todo li .buttons {
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+ul.todo li .buttons button {
+    width: 50px;
+    height: 50px;
+    float: left;
+    background: none;
+    border: 0px;
+    box-shadow: none;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
+
+ul.todo li .buttons button:last-of-type:before {
+    content: '';
+    width: 1px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    background: #edf0f1;
+}    
+
+ul.todo li .buttons button svg {
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -11px 0 0 -11px;
+}   
+
+ul.todo li .buttons button.complete svg {
+    border-radius: 11px;
+    border: 1.5px solid #25b99a;
+    transition: background 0.2s ease;
+}
+
+ul.todo#completed li .buttons button.complete svg {
+    background: #25b99a;
+    border: 0px;
+}
+
+ul.todo:not(#completed) li .buttons button.complete:hover svg .fill{
+    fill: #fff;
+}    
+
+ul.todo:not(#completed) li .buttons button.complete:hover svg {
+    background: rgba(37, 185, 154, 0.75);
+}    
+
+ul.todo#completed li .buttons button.complete svg .fill {
+    fill: #fff;
+}    
+
+ul.todo li .buttons button.remove svg .fill {
+    -webkit-transition: fill 0.2s ease;
+    -moz-transition: fill 0.2s ease;
+    -ms-transition: fill 0.2s ease;
+    -o-transition: fill 0.2s ease;
+    transition: fill 0.2s ease;
+}
+
+ul.todo li .buttons button.remove svg .fill {
+    fill: #c0cecb;
+}
+
+ul.todo li .buttons button.remove:hover svg .fill{
+    fill: #e85656;
+}    
+    
+ul.todo li .buttons button.complete svg .fill {
+    fill: #25b99a;
 }
